@@ -1,0 +1,6 @@
+#! /bin/bash
+
+for  alpha1 in $(seq 5.05 0.01 5.15); do 
+    echo -en "$alpha1\t"
+    scripts/run_vad.sh $alpha1 | grep TOTAL
+done | sort -t: -k2n
