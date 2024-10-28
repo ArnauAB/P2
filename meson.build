@@ -1,8 +1,7 @@
 project('PAV_P2','C')
 
 exe='vad'
-src=['src/main_vad.c','src/vad.c']
-lib=['-lm','-lsdnfile']
+src=['src/main_vad.c','src/vad.c', 'src/pav_analysis.c']
+lib=['-lm','-lsndfile']
 
 executable(exe,sources:src,link_args:lib)
-printf("hello")
