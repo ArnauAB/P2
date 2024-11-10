@@ -1,6 +1,7 @@
 #! /bin/bash
 
-for  alpha1 in $(seq 5.05 0.01 5.15); do 
+for  alpha1 in $(seq 63 0.1 64); do 
+    bin/vad --alpha1 $alpha1 -i PAV_41_6.wav -o PAV_41_6.vad
     echo -en "$alpha1\t"
-    scripts/run_vad.sh $alpha1 | grep TOTAL
+    scripts/vad_evaluation.pl PAV_41_6.lab | grep "===>"
 done | sort -t: -k2n
