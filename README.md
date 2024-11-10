@@ -143,8 +143,10 @@ Ejercicios
 	  estar seguros de que un segmento de señal se corresponde con voz.
 
 	* Duración mínima razonable de los segmentos de voz y silencio.
+	_La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno los 200 ms, así que usaremos este umbral._
 
 	* ¿Es capaz de sacar alguna conclusión a partir de la evolución de la tasa de cruces por cero?
+	_No, porque para los diferentes tramos de señal de voz, la tasa de cruces por cero puede ser muy distinta y no tiene porqué distiguirse siempre de la tasa en un tramo de señal de silencio. Por tanto, ZCR podría ayudar a detectar la voz, pero sería insuficiente._
 
 
 ### Desarrollo del detector de actividad vocal
