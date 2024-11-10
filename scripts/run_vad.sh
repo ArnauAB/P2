@@ -6,7 +6,7 @@
 # Establecemos que el código de retorno de un pipeline sea el del último programa con código de retorno
 # distinto de cero, o cero si todos devuelven cero.
 set -o pipefail
-alpha1=${1:-5.1}
+alpha1=-4.8
 # Write here the name and path of your program and database
 DIR_P2=$HOME/PAV/P2
 DB=$DIR_P2
@@ -30,6 +30,6 @@ for filewav in $DB/*wav; do
 
 done
 
-scripts/vad_evaluation.pl $DB/*/*lab
+scripts/vad_evaluation.pl $DB/*lab
 
 exit 0

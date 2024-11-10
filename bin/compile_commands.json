@@ -1,0 +1,20 @@
+[
+  {
+    "directory": "/home/arnauet/PAV/P2/bin",
+    "command": "cc -Ivad.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ vad.p/src_main_vad.c.o -MF vad.p/src_main_vad.c.o.d -o vad.p/src_main_vad.c.o -c ../src/main_vad.c",
+    "file": "../src/main_vad.c",
+    "output": "vad.p/src_main_vad.c.o"
+  },
+  {
+    "directory": "/home/arnauet/PAV/P2/bin",
+    "command": "cc -Ivad.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ vad.p/src_vad.c.o -MF vad.p/src_vad.c.o.d -o vad.p/src_vad.c.o -c ../src/vad.c",
+    "file": "../src/vad.c",
+    "output": "vad.p/src_vad.c.o"
+  },
+  {
+    "directory": "/home/arnauet/PAV/P2/bin",
+    "command": "cc -Ivad.p -I. -I.. -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ vad.p/src_pav_analysis.c.o -MF vad.p/src_pav_analysis.c.o.d -o vad.p/src_pav_analysis.c.o -c ../src/pav_analysis.c",
+    "file": "../src/pav_analysis.c",
+    "output": "vad.p/src_pav_analysis.c.o"
+  }
+]
