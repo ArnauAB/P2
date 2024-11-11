@@ -136,13 +136,14 @@ Ejercicios
   continuación, una captura de `wavesurfer` en la que se vea con claridad la señal temporal, el contorno de
   potencia y la tasa de cruces por cero, junto con el etiquetado manual de los segmentos.
 
-![image](https://github.com/user-attachments/assets/8035b45b-1d2e-42d3-b954-0bfff98b68bf)
+![image](https://github.com/user-attachments/assets/cbd0d563-8b83-4c8b-818b-d57a46fa1785)
+![image](https://github.com/user-attachments/assets/0b1b5d10-5114-431a-a249-0ac80e9f7aac)
 
 - A la vista de la gráfica, indique qué valores considera adecuados para las magnitudes siguientes:
   
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
-	  estar seguros de que un segmento de señal se corresponde con voz.
-  	_Utilizando el wavesurfer podemos comparar la waveform de la señal con la potencia (en dBs) y podemos deducir que en las tramas de voz la potencia supera los 60dB aproximadamente
+	  estar seguros de que un segmento de señal se corresponde con voz.  
+  	_Utilizando el wavesurfer podemos comparar la waveform de la señal con la potencia (en dBs) y podemos deducir que en las tramas de voz la potencia supera los 60dB aproximadamente_
 
 	* Duración mínima razonable de los segmentos de voz y silencio.  
 	_La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno los 200 ms, así que usaremos este umbral._
