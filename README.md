@@ -150,6 +150,7 @@ Ejercicios
 
 
 ### Desarrollo del detector de actividad vocal
+![image](https://github.com/user-attachments/assets/ac0f4b5f-4fad-42b4-8118-9cba190231e8)
 
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
