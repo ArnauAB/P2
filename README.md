@@ -143,7 +143,7 @@ Ejercicios
   
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
 	  estar seguros de que un segmento de señal se corresponde con voz.  
-  	_Utilizando el wavesurfer podemos comparar la waveform de la señal con la potencia (en dBs) y podemos deducir que en las tramas de voz la potencia supera los 60dB aproximadamente_
+  	_Utilizando el wavesurfer podemos comparar la waveform de la señal con la potencia (en dBs) y podemos deducir que en las tramas de voz la potencia supera los 20dB aproximadamente._
 
 	* Duración mínima razonable de los segmentos de voz y silencio.  
 	_La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno los 200 ms, así que usaremos este umbral._
