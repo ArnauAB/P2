@@ -1,6 +1,6 @@
 #! /bin/bash
 
-for  alpha1 in $(seq 63 0.1 64); do 
+for  alpha1 in $(seq 45 0.1 80); do 
     bin/vad --alpha1 $alpha1 -i PAV_41_6.wav -o PAV_41_6.vad
     echo -en "$alpha1\t"
     scripts/vad_evaluation.pl PAV_41_6.lab | grep "===>"
