@@ -138,6 +138,7 @@ Ejercicios
 
 
 - A la vista de la gráfica, indique qué valores considera adecuados para las magnitudes siguientes:
+![image](https://github.com/user-attachments/assets/f6eb264d-1f5e-4d40-85a9-4285f5e3deaf)
 
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
 	  estar seguros de que un segmento de señal se corresponde con voz.
