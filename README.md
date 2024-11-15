@@ -136,20 +136,20 @@ Ejercicios
   continuación, una captura de `wavesurfer` en la que se vea con claridad la señal temporal, el contorno de
   potencia y la tasa de cruces por cero, junto con el etiquetado manual de los segmentos.
 
-![image](https://github.com/user-attachments/assets/db622af2-394d-4a87-8241-251ff5bafc26)
-![image](https://github.com/user-attachments/assets/e0cf0947-c6a7-4793-afeb-7cf0b5fbd41e)
+![image](https://github.com/user-attachments/assets/45d77e81-527a-497b-ab41-0d5ed801011c)
+![image](https://github.com/user-attachments/assets/f5fb26f2-2522-47a8-aa45-3a08486ef134)
 
 - A la vista de la gráfica, indique qué valores considera adecuados para las magnitudes siguientes:
   
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
 	  estar seguros de que un segmento de señal se corresponde con voz.  
-  	_Utilizando el wavesurfer podemos comparar la waveform de la señal con la potencia (en dBs) y podemos deducir que en las tramas de voz la potencia supera los 20dB aproximadamente._
+  	_Utilizando el wavesurfer podemos observar la waveform de la señal con su potencia correspondiente (en dBs) y vemos que en las tramas de voz la potencia es de entorno a los 30 dB superior al nivel de silencio inicial de 40dB._
 
 	* Duración mínima razonable de los segmentos de voz y silencio.  
-	_La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno los 200 ms, así que usaremos este umbral._
+	_La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno a los 200 ms, comprobamos que este valor es correcto midiendo los timestamps de los tramas de voz y los silencios, así que usaremos este umbral._
 
 	* ¿Es capaz de sacar alguna conclusión a partir de la evolución de la tasa de cruces por cero?<br>
-	_No, porque para los diferentes tramos de señal de voz, la tasa de cruces por cero puede ser muy distinta y no tiene porqué distiguirse siempre de la tasa en un tramo de señal de silencio. Por tanto, ZCR podría ayudar a detectar la voz, pero sería insuficiente._
+	_Observando la gráfica de los cruces por cero observamos que los periodos donde esta se mantiene elevada suele coincidir con periodos de silencio en la señal, esto de debe a que es una grabación imperfecta y el ruido blanco que existe de fondo tiende a ser aleatorio y oscilatorio, aumentando este índice. Aún así no obtenemos una polarización perfecta, también hay tramos de señal de voz que pueden tener un número de cruces por cero notable debido a sonidos sordos o fricativos (s o f), ruido de fondo y interferencias entre otros motivos._
 
 
 ### Desarrollo del detector de actividad vocal
