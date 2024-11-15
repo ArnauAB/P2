@@ -44,6 +44,8 @@ Features compute_features(const float *x, int N) {
    */
   Features feat;
   feat.p = compute_power(x,N);
+  feat.zcr = compute_zcr(x,N,16000);
+  feat.am = compute_am(x,N);
   return feat;
 }
 
@@ -51,7 +53,7 @@ Features compute_features(const float *x, int N) {
  * TODO: Init the values of vad_data
  */
 
-VAD_DATA * vad_open(float rate) {
+VAD_DATA * vad_open(float rate, float t_min) {
   VAD_DATA *vad_data = malloc(sizeof(VAD_DATA));
   vad_data->state = ST_INIT;
   vad_data->sampling_rate = rate;
@@ -59,14 +61,17 @@ VAD_DATA * vad_open(float rate) {
 
   vad_data->num_MS = 0; 
   vad_data->num_MV = 0; 
-  vad_data->num_min = 5;
+  vad_data->num_min = t_min;
   return vad_data;
 }
 
 VAD_STATE vad_close(VAD_DATA *vad_data) {
-  /* 
-   * TODO: decide what to do with the last undecided frames
-   */
+if (vad_data->state == ST_MAYBE_SILENCE){
+  vad_data->state = ST_SILENCE;
+}
+if (vad_data->state == ST_MAYBE_VOICE){
+  vad_data->state = ST_VOICE;
+}
   VAD_STATE state = vad_data->state;
 
   free(vad_data);
