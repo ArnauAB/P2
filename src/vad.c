@@ -59,7 +59,7 @@ VAD_DATA * vad_open(float rate) {
 
   vad_data->num_MS = 0; 
   vad_data->num_MV = 0; 
-  vad_data->num_min = 0;
+  vad_data->num_min = 5;
   return vad_data;
 }
 
@@ -149,10 +149,10 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1) {
     break;
   }
 
-  if (vad_data->state == ST_SILENCE || vad_data->state == ST_MAYBE_VOICE){
+  if (vad_data->state == ST_SILENCE){
     return ST_SILENCE;
   }
-  else if (vad_data->state == ST_VOICE || vad_data->state == ST_MAYBE_SILENCE)
+  else if (vad_data->state == ST_VOICE)
   {
     return ST_VOICE;
   }

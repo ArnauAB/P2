@@ -1,7 +1,7 @@
 #! /bin/bash
 
-for  alpha1 in $(seq 45 0.1 80); do 
-    bin/vad --alpha1 $alpha1 -i PAV_41_6.wav -o PAV_41_6.vad
+for  alpha1 in $(seq 6 0.1 9); do 
+    bin/vad --alpha1 $alpha1 -i pav_231.wav -o pav_231.vad
     echo -en "$alpha1\t"
-    scripts/vad_evaluation.pl PAV_41_6.lab | grep "===>"
+    scripts/vad_evaluation.pl pav_231.lab | grep "===>"
 done | sort -t: -k2n
