@@ -153,13 +153,17 @@ Ejercicios
 
 
 ### Desarrollo del detector de actividad vocal
-![image](https://github.com/user-attachments/assets/ac0f4b5f-4fad-42b4-8118-9cba190231e8)
+![image](https://github.com/user-attachments/assets/f51a6674-45cf-4f1e-bc79-c69f7c04a173)
 
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
+_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script vad_evaluation.pl, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas en el Ground Truth. Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal según el Ground Truth. La combinación de estos valores a través de su media armónica da lugar al F-score, una métrica que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un F-score de 91,242%, lo que indica un excelente desempeño del sistema en la detección de actividad vocal._
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
-  automática conseguida para el fichero grabado al efecto. 
+  automática conseguida para el fichero grabado al efecto.
+  _Esta es la señal grabada, con las transcripciones de etiquetado manual (
+![image](https://github.com/user-attachments/assets/b3cdcb7d-3acd-482a-8f05-905d182eba55)
+![image](https://github.com/user-attachments/assets/6c3cc5f6-ad83-4189-8460-de50b1ec1594)
 
 - Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
 
