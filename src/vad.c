@@ -87,7 +87,7 @@ unsigned int vad_frame_size(VAD_DATA *vad_data) {
  * using a Finite State Automata
  */
 
-VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1) {
+VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1, float alpha2) {
 
   /* 
    * TODO: You can change this, using your own features,
@@ -100,11 +100,12 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1) {
   switch (vad_data->state) {
   case ST_INIT:
     vad_data->state = ST_SILENCE;
-    vad_data->p1 = f.p + alpha1;
+    vad_data->p_sup = f.p + alpha1;
+    vad_data->p_inf = f.p + alpha2;
     break;
 
   case ST_SILENCE:
-    if (f.p > vad_data->p1) {
+    if (f.p > vad_data->p_sup) {
       if (vad_data->num_min==0){
         vad_data->state = ST_VOICE;
       } else {
@@ -115,7 +116,7 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1) {
     break;
 
   case ST_VOICE:
-    if (f.p < vad_data->p1){
+    if (f.p < vad_data->p_inf){
       if (vad_data->num_min==0){
         vad_data->state = ST_SILENCE;
       } else {
@@ -125,7 +126,7 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1) {
     break;
 
   case ST_MAYBE_SILENCE:
-    if (f.p < vad_data->p1) {
+    if (f.p < vad_data->p_sup) {
       if (vad_data->num_MS>=vad_data->num_min){
       vad_data->num_MS = 0;
       vad_data->state = ST_SILENCE;
@@ -138,7 +139,7 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x, float alpha1) {
     break;
 
   case ST_MAYBE_VOICE:
-    if (f.p > vad_data->p1){
+    if (f.p > vad_data->p_inf){
       if (vad_data->num_MV>=vad_data->num_min){
       vad_data->num_MV = 0;
       vad_data->state = ST_VOICE;

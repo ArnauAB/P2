@@ -6,7 +6,8 @@
 # Establecemos que el código de retorno de un pipeline sea el del último programa con código de retorno
 # distinto de cero, o cero si todos devuelven cero.
 set -o pipefail
-alpha1=9
+alpha1=7
+alpha2=6.5
 # Write here the name and path of your program and database
 DIR_P2=$HOME/PAV/P2
 DB=$DIR_P2/db.v4/*
@@ -14,7 +15,12 @@ CMD="$DIR_P2/bin/vad"
 
 if [ $# -eq 1 ]
   then
-    CMD="$DIR_P2/bin/vad --alpha=$1"
+    CMD="$DIR_P2/bin/vad --alpha=$1=$2"
+fi
+
+if [ $# -eq 2 ]
+  then
+    CMD="$DIR_P2/bin/vad --alpha1=$1 --alpha2=$2"
 fi
 
 for filewav in $DB/*wav; do

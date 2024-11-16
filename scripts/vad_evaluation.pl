@@ -37,6 +37,11 @@ sub read_lab {
 	    print "Format error: $_\n";
 	    die;
 	}
+	if ($tbeg != $t_old) {
+	    print "Error: time discontinuity:\n",
+	    "  t_old: $t_old\n",
+	    "  new line: $_\n";
+	}
 	push @data, [$tbeg, $tend, $label];
 	$t_old = $tend;
     }    

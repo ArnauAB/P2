@@ -33,6 +33,7 @@ int main(int argc, char *argv[]) {
   output_vad = args.output_vad;
   output_wav = args.output_wav;
   float alpha1 = atof(args.alpha1);
+  float alpha2 = atof(args.alpha2);
   float t_min = 11;
 
   if (input_wav == 0 || output_vad == 0) {
@@ -84,7 +85,7 @@ int main(int argc, char *argv[]) {
        sf_writef_float(sndfile_out,buffer,frame_size);
     }
 
-    state = vad(vad_data, buffer, alpha1);
+    state = vad(vad_data, buffer, alpha1, alpha2);
     if (verbose & DEBUG_VAD) vad_show_state(vad_data, stdout);
 
     /* TODO: print only SILENCE and VOICE labels */
