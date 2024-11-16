@@ -161,7 +161,7 @@ _Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el 
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto.  
-  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (.vad inferior)_  
+  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (.vad inferior)._  
 ![image](https://github.com/user-attachments/assets/f321f637-2638-46e3-8fe9-b9ee955c95db)
 ![image](https://github.com/user-attachments/assets/e5a79eb2-1c37-46e7-9955-540cd89d6bc1)
 
