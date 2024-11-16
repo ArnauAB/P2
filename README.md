@@ -153,24 +153,25 @@ Ejercicios
 
 
 ### Desarrollo del detector de actividad vocal
-![image](https://github.com/user-attachments/assets/f51a6674-45cf-4f1e-bc79-c69f7c04a173)
+![image](https://github.com/user-attachments/assets/3e0ade58-4556-48dc-abbe-a08459a4c21c)
 
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
-  tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
-_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script vad_evaluation.pl, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas de Ground Truth. Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal. La combinación de estos valores a través de su media armónica da lugar al F-score, una métrica que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un F-score de 91,242%, lo que indica un excelente desempeño del sistema en la detección de actividad vocal._
+  tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.  
+_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script vad_evaluation.pl, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas de Ground Truth. Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal. La combinación de estos valores a través de su media armónica da lugar al F-score, una métrica que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un F-score de 93,016%, lo que indica un excelente desempeño del sistema en la detección de actividad vocal._
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto.  
-  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (
-![image](https://github.com/user-attachments/assets/b3cdcb7d-3acd-482a-8f05-905d182eba55)
-![image](https://github.com/user-attachments/assets/6c3cc5f6-ad83-4189-8460-de50b1ec1594)
+  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (.vad inferior)
+![image](https://github.com/user-attachments/assets/f321f637-2638-46e3-8fe9-b9ee955c95db)
+![image](https://github.com/user-attachments/assets/e5a79eb2-1c37-46e7-9955-540cd89d6bc1)
 
-- Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
+- Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.  
+_En las imágenes capturadas de wavesurfer observamos como nuestro programa discierne con alta precisión entre los tramos de voz y los de silencio, excepto en un caso en concreto alrededor del segundo 6,6 donde se introduce un corto segmento de silencio debido a que la palabra "dia" se alarga más de lo normal mientras se atenúa lo cual confunde al algoritmo._
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
-  el resumen).
-_Hola_  
+  el resumen).  
+  _Después de haber optimizado los parametros de alpha1, alpha2 y Tmin para todas las señales de la base de datos proporcionada de cursos anteriores, acabamos obteniendo un F-score elevado de 91.263%._  
 ![image](https://github.com/user-attachments/assets/9e47c536-aed3-4254-bf12-062061b8a105)
 
 
@@ -186,6 +187,8 @@ _Hola_
 
 - Si ha usado `docopt_c` para realizar la gestión de las opciones y argumentos del programa `vad`, inserte
   una captura de pantalla en la que se vea el mensaje de ayuda del programa.
+_Sí, hemos usado 'docopt_c' para realizar la gestión de las opciones y argumentos alpha1 y alpha 2 del programa, de manera que al ejecutar `scripts/run_vad.sh 8.3 2.6` se definen alpha1=8.3 y alpha2=2.6 lo cual hemos visto que optimizaba nuestro algoritmo para Tmin=11 tramas.
+![image](https://github.com/user-attachments/assets/02ba9d56-84b8-416c-9d5b-a646f1ce514e)
 
 
 ### Contribuciones adicionales y/o comentarios acerca de la práctica
@@ -195,7 +198,6 @@ _Hola_
 
 - Si lo desea, puede realizar también algún comentario acerca de la realización de la práctica que
   considere de interés de cara a su evaluación.
-
 
 ### Antes de entregar la práctica
 
