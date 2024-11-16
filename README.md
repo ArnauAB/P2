@@ -157,11 +157,11 @@ Ejercicios
 
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
-_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script vad_evaluation.pl, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas en el Ground Truth. Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal según el Ground Truth. La combinación de estos valores a través de su media armónica da lugar al F-score, una métrica que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un F-score de 91,242%, lo que indica un excelente desempeño del sistema en la detección de actividad vocal._
+_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script vad_evaluation.pl, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas de Ground Truth. Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal. La combinación de estos valores a través de su media armónica da lugar al F-score, una métrica que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un F-score de 91,242%, lo que indica un excelente desempeño del sistema en la detección de actividad vocal._
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
-  automática conseguida para el fichero grabado al efecto.
-  _Esta es la señal grabada, con las transcripciones de etiquetado manual (
+  automática conseguida para el fichero grabado al efecto.  
+  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (
 ![image](https://github.com/user-attachments/assets/b3cdcb7d-3acd-482a-8f05-905d182eba55)
 ![image](https://github.com/user-attachments/assets/6c3cc5f6-ad83-4189-8460-de50b1ec1594)
 
@@ -170,6 +170,8 @@ _Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).
+_Hola_  
+![image](https://github.com/user-attachments/assets/9e47c536-aed3-4254-bf12-062061b8a105)
 
 
 ### Trabajos de ampliación
