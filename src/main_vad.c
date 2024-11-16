@@ -98,10 +98,14 @@ int main(int argc, char *argv[]) {
       }
     }
 
-    if (sndfile_out != 0) {
+    if (sndfile_out != 0 && state==ST_SILENCE) {
       /* TODO: go back and write zeros in silence segments */
+      sf_seek(sndfile_out, -frame_size, SEEK_CUR);
+      sf_write_float(sndfile_out, buffer_zeros, frame_size);
+      last_state = state;
     }
   }
+
 
   state = vad_close(vad_data);
   /* TODO: what do you want to print, for last frames? */
