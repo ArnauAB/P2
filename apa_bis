@@ -1,0 +1,6 @@
+#! /bin/bash
+
+for  alpha2 in $(seq 2 0.1 5); do
+    echo -en "alpha2=$alpha2\t"
+    scripts/run_vad.sh 8.3 $alpha2 | grep "TOTAL"
+done | sort -t: -k2n

@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
       if (t != last_t && state != ST_UNDEF){
         fprintf(vadfile, "%.5f\t%.5f\t%s\n", last_t * frame_duration, (t-t_min) * frame_duration, state2str(last_state));
         last_state = state;
-        last_t = t;
+        last_t = t-t_min;
       }
     }
 
