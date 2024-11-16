@@ -165,8 +165,8 @@ Ejercicios
 ![image](https://github.com/user-attachments/assets/f321f637-2638-46e3-8fe9-b9ee955c95db)
 ![image](https://github.com/user-attachments/assets/e5a79eb2-1c37-46e7-9955-540cd89d6bc1)
 
-- Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.  
-> En las imágenes capturadas de wavesurfer observamos como nuestro programa discierne con alta precisión entre los tramos de voz y los de silencio, excepto en un caso en concreto alrededor del segundo 6,6 donde se introduce un corto segmento de silencio debido a que la palabra "dia" se alarga más de lo normal mientras se atenúa y vibra la voz, lo cual confunde al algoritmo.
+- Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
+  > En las imágenes capturadas de wavesurfer observamos como nuestro programa discierne con alta precisión entre los tramos de voz y los de silencio, excepto en un caso en concreto alrededor del segundo 6,6 donde se introduce un corto segmento de silencio debido a que la palabra "dia" se alarga más de lo normal mientras se atenúa y vibra la voz, lo cual confunde al algoritmo.
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
@@ -181,9 +181,9 @@ Ejercicios
 
 - Si ha desarrollado el algoritmo para la cancelación de los segmentos de silencio, inserte una gráfica en
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
-  mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).  
->Comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, observamos como estos tramos vacíos quedan alisados por el hecho de estar sustituyendo este ruido interferente de fondo por un valor 0.  
-`ADJUNTAR FOTO DEL WAVESURFER AMB I SENSE CANCEL·LACIÓ DE SOROLL`
+  mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
+  > Comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, observamos como estos tramos vacíos quedan alisados por el hecho de estar sustituyendo este ruido interferente de fondo por un valor 0.  
+`ADJUNTAR FOTO DEL WAVESURFER AMB I SENSE CANCEL·LACIÓ DE SOROLL AMB AQUEST CODI`
 
 #### Gestión de las opciones del programa usando `docopt_c`
 
