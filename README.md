@@ -157,21 +157,21 @@ Ejercicios
 
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
   tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.  
-_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script vad_evaluation.pl, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas de "Ground Truth". Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal. La media armónica de estos valores da lugar al F-score, que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un valor de F-score de 93,016%, un resultado muy bueno de la detección de actividad vocal._
+_Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script `vad_evaluation.pl`, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas de "Ground Truth". Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal. La media armónica de estos valores da lugar al F-score, que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un valor de F-score de 93,016%, un resultado muy bueno de la detección de actividad vocal._
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto.  
-  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (.vad inferior)
+  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (.vad inferior)_  
 ![image](https://github.com/user-attachments/assets/f321f637-2638-46e3-8fe9-b9ee955c95db)
 ![image](https://github.com/user-attachments/assets/e5a79eb2-1c37-46e7-9955-540cd89d6bc1)
 
 - Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.  
-_En las imágenes capturadas de wavesurfer observamos como nuestro programa discierne con alta precisión entre los tramos de voz y los de silencio, excepto en un caso en concreto alrededor del segundo 6,6 donde se introduce un corto segmento de silencio debido a que la palabra "dia" se alarga más de lo normal mientras se atenúa lo cual confunde al algoritmo._
+_En las imágenes capturadas de wavesurfer observamos como nuestro programa discierne con alta precisión entre los tramos de voz y los de silencio, excepto en un caso en concreto alrededor del segundo 6,6 donde se introduce un corto segmento de silencio debido a que la palabra "dia" se alarga más de lo normal mientras se atenúa y vibra la voz, lo cual confunde al algoritmo._
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).  
-  _Después de haber optimizado los parametros de alpha1, alpha2 y Tmin para todas las señales de la base de datos proporcionada de cursos anteriores, acabamos obteniendo un F-score elevado de 91.263%._  
+  _Después de haber optimizado los parámetros de alpha1, alpha2 y Tmin (8.3, 2.6 y 11 respectivamente), al ejecutar el algoritmo sobre todas las señales de la base de datos proporcionada de cursos anteriores, acabamos obteniendo un F-score elevado de 91.263%._  
 ![image](https://github.com/user-attachments/assets/9e47c536-aed3-4254-bf12-062061b8a105)
 
 
@@ -181,14 +181,18 @@ _En las imágenes capturadas de wavesurfer observamos como nuestro programa disc
 
 - Si ha desarrollado el algoritmo para la cancelación de los segmentos de silencio, inserte una gráfica en
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
-  mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
+  mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).  
+_Comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, observamos como estos tramos vacíos quedan alisados por el hecho de estar sustituyendo este ruido interferente de fondo por un valor 0._  
+`ADJUNTAR FOTO DEL WAVESURFER AMB I SENSE CANCEL·LACIÓ DE SOROLL`
 
 #### Gestión de las opciones del programa usando `docopt_c`
 
 - Si ha usado `docopt_c` para realizar la gestión de las opciones y argumentos del programa `vad`, inserte
   una captura de pantalla en la que se vea el mensaje de ayuda del programa.
-_Sí, hemos usado 'docopt_c' para realizar la gestión de las opciones y argumentos alpha1 y alpha 2 del programa, de manera que al ejecutar `scripts/run_vad.sh 8.3 2.6` se definen alpha1=8.3 y alpha2=2.6 lo cual hemos visto que optimizaba nuestro algoritmo para Tmin=11 tramas.
+_Sí, hemos usado `docopt_c` para realizar la gestión de las opciones y argumentos alpha1 y alpha 2 del programa, de manera que al ejecutar `scripts/run_vad.sh 8.3 2.6` en el terminal, se definen alpha1=8.3 y alpha2=2.6 lo cual hemos visto que optimizaba nuestro algoritmo para un número de tramas fijas Tmin=11._  
 ![image](https://github.com/user-attachments/assets/02ba9d56-84b8-416c-9d5b-a646f1ce514e)
+![image](https://github.com/user-attachments/assets/c2f1ce6a-edd5-4a74-a81d-4157fb74b47d)
+![image](https://github.com/user-attachments/assets/27a0c639-ff34-45c4-bcac-8af63b3def12)
 
 
 ### Contribuciones adicionales y/o comentarios acerca de la práctica
