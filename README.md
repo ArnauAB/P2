@@ -171,7 +171,7 @@ Ejercicios
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
   el resumen).  
-  > Después de haber optimizado los parámetros de alpha1, alpha2 y Tmin (8.3, 2.6 y 11 respectivamente), al ejecutar el algoritmo sobre todas las señales de la base de datos proporcionada de cursos anteriores, acabamos obteniendo un F-score elevado de 91.263%.  
+  > Después de haber optimizado los parámetros de alpha1, alpha2 y t_min (8.3, 2.6 y 11 respectivamente), al ejecutar el algoritmo sobre todas las señales de la base de datos proporcionada de cursos anteriores, acabamos obteniendo un F-score elevado de 91.263%.  
 ![image](https://github.com/user-attachments/assets/9e47c536-aed3-4254-bf12-062061b8a105)
 
 
@@ -189,7 +189,7 @@ Ejercicios
 
 - Si ha usado `docopt_c` para realizar la gestión de las opciones y argumentos del programa `vad`, inserte
   una captura de pantalla en la que se vea el mensaje de ayuda del programa.  
-  > Sí, hemos usado `docopt_c` para realizar la gestión de las opciones y argumentos alpha1 y alpha 2 del programa, de manera que al ejecutar `scripts/run_vad.sh 8.3 2.6` en el terminal, se definen alpha1=8.3 y alpha2=2.6, los cuales hemos visto que optimizaban nuestro algoritmo para un número de tramas fijas Tmin=11.  
+  > Sí, hemos usado `docopt_c` para realizar la gestión de las opciones y argumentos alpha1 y alpha 2 del programa, de manera que al ejecutar `scripts/run_vad.sh 8.3 2.6` en el terminal, se definen alpha1=8.3 y alpha2=2.6, los cuales hemos visto que optimizaban nuestro algoritmo para segmentos de un número mínimo de t_min=11 tramas.  
 ![image](https://github.com/user-attachments/assets/02ba9d56-84b8-416c-9d5b-a646f1ce514e)
 ![image](https://github.com/user-attachments/assets/c2f1ce6a-edd5-4a74-a81d-4157fb74b47d)
 ![image](https://github.com/user-attachments/assets/27a0c639-ff34-45c4-bcac-8af63b3def12)
