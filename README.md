@@ -182,7 +182,6 @@ Ejercicios
 - Si ha desarrollado el algoritmo para la cancelación de los segmentos de silencio, inserte una gráfica en
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
   mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
-  > No hemos sido capaces de implementar el algoritmo apara la cancelación de los segmentos de silencio, el ruido blanco sigue presente.
 
 
 #### Gestión de las opciones del programa usando `docopt_c`
