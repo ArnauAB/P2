@@ -143,29 +143,36 @@ Ejercicios
   
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
 	  estar seguros de que un segmento de señal se corresponde con voz.  
-  	_Utilizando el wavesurfer podemos observar la waveform de la señal con su potencia correspondiente (en dBs) y vemos que en las tramas de voz la potencia es de entorno a los 30 dB superior al nivel de silencio inicial de 40dB._
+  	> Utilizando el wavesurfer podemos observar la waveform de la señal con su potencia correspondiente (en dBs) y vemos que en las tramas de voz la potencia es de entorno a los 30 dB superior al nivel de silencio inicial de 40dB.
 
 	* Duración mínima razonable de los segmentos de voz y silencio.  
-	_La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno a los 200 ms, comprobamos que este valor es correcto midiendo los timestamps de los tramas de voz y los silencios, así que usaremos este umbral._
+	> La duración de un segmento de voz tiene que ser, como mínimo, el promedio de la duración de una palabra monosilábica pronunciada en castellano en tono normal. Por otro lado, un segmento de silencio tiene que tener una duración necesaria para que las personas lo detectemos naturalmente como silencio, es decir, que sea superior al tiempo de reacción auditiva humana. Ambas duraciones mencionadas están entorno a los 200 ms, comprobamos que este valor es correcto midiendo los timestamps de los tramas de voz y los silencios, así que usaremos este umbral.
 
 	* ¿Es capaz de sacar alguna conclusión a partir de la evolución de la tasa de cruces por cero?<br>
-	_Observando la gráfica de los cruces por cero observamos que los periodos donde esta se mantiene elevada suele coincidir con periodos de silencio en la señal, esto de debe a que es una grabación imperfecta y el ruido blanco que existe de fondo tiende a ser aleatorio y oscilatorio, aumentando este índice. Aún así no obtenemos una polarización perfecta, también hay tramos de señal de voz que pueden tener un número de cruces por cero notable debido a sonidos sordos o fricativos (s o f), ruido de fondo y interferencias entre otros motivos._
+	> Observando la gráfica de los cruces por cero observamos que los periodos donde esta se mantiene elevada suele coincidir con periodos de silencio en la señal, esto de debe a que es una grabación imperfecta y el ruido blanco que existe de fondo tiende a ser aleatorio y oscilatorio, aumentando este índice. Aún así no obtenemos una polarización perfecta, también hay tramos de señal de voz que pueden tener un número de cruces por cero notable debido a sonidos sordos o fricativos (s o f), ruido de fondo y interferencias entre otros motivos.
 
 
 ### Desarrollo del detector de actividad vocal
-![image](https://github.com/user-attachments/assets/ac0f4b5f-4fad-42b4-8118-9cba190231e8)
+![image](https://github.com/user-attachments/assets/3e0ade58-4556-48dc-abbe-a08459a4c21c)
 
 - Complete el código de los ficheros de la práctica para implementar un detector de actividad vocal en
-  tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.
+  tiempo real tan exacto como sea posible. Tome como objetivo la maximización de la puntuación-F `TOTAL`.  
+> Con el código desarrollado, procedemos a evaluar el rendimiento utilizando el script `vad_evaluation.pl`, lo que nos permite calcular el valor de 'Recall'. Este parámetro mide la proporción de muestras correctamente detectadas por nuestro algoritmo en relación con las muestras marcadas de "Ground Truth". Por otro lado, 'Precision' refleja la proporción de las muestras detectadas por nuestro algoritmo que efectivamente corresponden a actividad vocal. La media armónica de estos valores da lugar al F-score, que evalúa el equilibrio entre 'Recall' y 'Precision'. Tras la evaluación, logramos un valor de F-score de 93,016%, un resultado muy bueno de la detección de actividad vocal.
 
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
-  automática conseguida para el fichero grabado al efecto. 
+  automática conseguida para el fichero grabado al efecto.  
+  _Esta es la señal grabada, con las transcripciones de etiquetado manual (.lab superior) y las de detección del algoritmo (.vad inferior)._  
+![image](https://github.com/user-attachments/assets/f321f637-2638-46e3-8fe9-b9ee955c95db)
+![image](https://github.com/user-attachments/assets/e5a79eb2-1c37-46e7-9955-540cd89d6bc1)
 
 - Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
+  > En las imágenes capturadas de wavesurfer observamos como nuestro programa discierne con alta precisión entre los tramos de voz y los de silencio, excepto en un caso en concreto alrededor del segundo 6,6 donde se introduce un corto segmento de silencio debido a que la palabra "dia" se alarga más de lo normal mientras se atenúa y vibra la voz, lo cual confunde al algoritmo.
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
-  el resumen).
+  el resumen).  
+  > Después de haber optimizado los parámetros de alpha1, alpha2 y t_min (8.3, 2.6 y 11 respectivamente), al ejecutar el algoritmo sobre todas las señales de la base de datos proporcionada de cursos anteriores, acabamos obteniendo un F-score elevado de 91.263%.  
+![image](https://github.com/user-attachments/assets/9e47c536-aed3-4254-bf12-062061b8a105)
 
 
 ### Trabajos de ampliación
@@ -175,11 +182,17 @@ Ejercicios
 - Si ha desarrollado el algoritmo para la cancelación de los segmentos de silencio, inserte una gráfica en
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
   mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
+  > Comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, observamos como estos tramos vacíos quedan alisados por el hecho de estar sustituyendo este ruido interferente de fondo por un valor 0.  
+`ADJUNTAR FOTO DEL WAVESURFER AMB I SENSE CANCEL·LACIÓ DE SOROLL AMB AQUEST CODI`
 
 #### Gestión de las opciones del programa usando `docopt_c`
 
 - Si ha usado `docopt_c` para realizar la gestión de las opciones y argumentos del programa `vad`, inserte
-  una captura de pantalla en la que se vea el mensaje de ayuda del programa.
+  una captura de pantalla en la que se vea el mensaje de ayuda del programa.  
+  > Sí, hemos usado `docopt_c` para realizar la gestión de las opciones y argumentos alpha1 y alpha 2 del programa, de manera que al ejecutar `scripts/run_vad.sh 8.3 2.6` en el terminal, se definen alpha1=8.3 y alpha2=2.6, los cuales hemos visto que optimizaban nuestro algoritmo para segmentos de un número mínimo de t_min=11 tramas.  
+![image](https://github.com/user-attachments/assets/02ba9d56-84b8-416c-9d5b-a646f1ce514e)
+![image](https://github.com/user-attachments/assets/c2f1ce6a-edd5-4a74-a81d-4157fb74b47d)
+![image](https://github.com/user-attachments/assets/27a0c639-ff34-45c4-bcac-8af63b3def12)
 
 
 ### Contribuciones adicionales y/o comentarios acerca de la práctica
@@ -189,7 +202,6 @@ Ejercicios
 
 - Si lo desea, puede realizar también algún comentario acerca de la realización de la práctica que
   considere de interés de cara a su evaluación.
-
 
 ### Antes de entregar la práctica
 
