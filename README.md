@@ -182,9 +182,7 @@ Ejercicios
 - Si ha desarrollado el algoritmo para la cancelación de los segmentos de silencio, inserte una gráfica en
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
   mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
-  > Intentamos adaptar el código con la función mostrada debajo, pero comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, no acabamos de observar el efecto de alisado en estos tramos vacíos, sigue habiendo interferencia en forma de ruido blanco envez de un valor de 0 absoluto.  
-![image](https://github.com/user-attachments/assets/6138269f-83f9-4f37-a8ae-dc1719ed7452)
-![image](https://github.com/user-attachments/assets/b03cd907-250e-477d-a8bf-c97d8e04a4aa)
+  > No hemos sido capaces de implementar el algoritmo apara la cancelación de los segmentos de silencio, el ruido blanco sigue presente.
 
 
 #### Gestión de las opciones del programa usando `docopt_c`
