@@ -182,8 +182,10 @@ Ejercicios
 - Si ha desarrollado el algoritmo para la cancelación de los segmentos de silencio, inserte una gráfica en
   la que se vea con claridad la señal antes y después de la cancelación (puede que `wavesurfer` no sea la
   mejor opción para esto, ya que no es capaz de visualizar varias señales al mismo tiempo).
-  > Comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, observamos como estos tramos vacíos quedan alisados por el hecho de estar sustituyendo este ruido interferente de fondo por un valor 0.  
-`ADJUNTAR FOTO DEL WAVESURFER AMB I SENSE CANCEL·LACIÓ DE SOROLL AMB AQUEST CODI`
+  > Intentamos adaptar el código con la función mostrada debajo, pero comparando la waveform de la señal de audio antes y después de aplicar la cancelación de ruido en los segmentos de silencio, no acabamos de observar el efecto de alisado en estos tramos vacíos, sigue habiendo interferencia en forma de ruido blanco envez de un valor de 0 absoluto.  
+![image](https://github.com/user-attachments/assets/6138269f-83f9-4f37-a8ae-dc1719ed7452)
+![image](https://github.com/user-attachments/assets/b03cd907-250e-477d-a8bf-c97d8e04a4aa)
+
 
 #### Gestión de las opciones del programa usando `docopt_c`
 
@@ -201,8 +203,8 @@ Ejercicios
   parámetros alternativos, etc.).
 
 - Si lo desea, puede realizar también algún comentario acerca de la realización de la práctica que
-  considere de interés de cara a su evaluación.
-
+  considere de interés de cara a su evaluación.  
+  > El audio que grabamos originalmente en la P1 era de muy mala calidad debido a que no sabíamos donde estaba el micrófono de nuestro ordenador y además se colaron interferencias y ruidos externos del aula de laboratorio, al estudiarlo en esta práctica inicialmente con nuestro algoritmo no entendíamos porqué obteníamos resultados tan malos de nuestro precision, recall y cruces por cero, hasta que finalmente optamos por acabar adoptando otro audio de la carpeta de db.v4 de cursos anteriores (en concreto el archivo pav_4161 de la carpeta 2018-19q1) para analizarlo ejecutando vad.c y obteniendo así un resultado bastante bueno ahora que nuestro algoritmo no tenía tantas dificultades añadidas para diferenciar lo que realmente era señal de voz con las tramas de silencio.
 ### Antes de entregar la práctica
 
 Recuerde comprobar que el repositorio cuenta con los códigos correctos y en condiciones de ser 
